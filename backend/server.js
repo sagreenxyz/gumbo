@@ -1,11 +1,3 @@
-const random = require('./utils/random')
+const apikey = require('./utils/apikey')
 
-console.log(random.genRandString(64))
-
-//////////////////
-
-function somethingToDo() {
-    console.log('doing something to do')
-}
-
-random.doSomething(somethingToDo)
+console.log(apikey.getAPIKey())
