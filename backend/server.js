@@ -1,11 +1,11 @@
 const apikey = require('./utils/apikey')
 
-// console.log(apikey.getAPIKey())
-
 require('dotenv').config()
 
 const express = require('express')
 const app = express()
+
+app.use(express.urlencoded({extended: false}))
 
 app.get('/', (req, res) => {
     res.json({
@@ -13,7 +13,9 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/api', (req, res) => {
+app.post('/api', (req, res) => {
+    // curl http://localhost:5000/api -H 'Content-Type: application/x-www-form-urlencoded' -d 'email=sagreenxyz@gmail.com'
+    console.log(req.body.email)
     res.json({
         api_key: apikey.getAPIKey(64)
     })
