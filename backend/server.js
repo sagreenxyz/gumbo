@@ -2,7 +2,9 @@
 
 // console.log(apikey.getAPIKey())
 
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
 
-app.listen(3000, () => {console.log(`server running at http://localhost:3000`)})
+app.listen(process.env.PORT, () => {console.log(`server running at http://localhost:${process.env.PORT}`)})
