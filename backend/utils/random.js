@@ -14,7 +14,7 @@ const arrayChars = () => {
         i++
     }
 
-    return arrayUppers.concat(arrayLowers)
+    return [...arrayUppers, ...arrayLowers]
 
 }
 
