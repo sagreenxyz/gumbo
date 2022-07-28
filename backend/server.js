@@ -1,4 +1,4 @@
-// const apikey = require('./utils/apikey')
+const apikey = require('./utils/apikey')
 
 // console.log(apikey.getAPIKey())
 
@@ -10,6 +10,12 @@ const app = express()
 app.get('/', (req, res) => {
     res.json({
         message: 'Hello, World!'
+    })
+})
+
+app.get('/api', (req, res) => {
+    res.json({
+        api_key: apikey.getAPIKey(64)
     })
 })
 
